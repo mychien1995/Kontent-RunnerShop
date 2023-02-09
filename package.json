@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --watch",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "nuxt": "^3.1.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "@types/async-lock": "^1.4.0",
+    "async-lock": "^1.4.0",
+    "pinia": "^2.0.30"
+  }
+}
