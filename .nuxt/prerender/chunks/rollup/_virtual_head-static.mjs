@@ -1,0 +1,4 @@
+const _virtual__headStatic = {"headTags":"<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap\">","bodyTags":"<script src=\"/js/jquery-1.11.0.min.js\" type=\"text/javascript\"></script>\n<script src=\"/js/jquery-migrate-1.2.1.min.js\" type=\"text/javascript\"></script>\n<script src=\"/js/bootstrap.bundle.min.js\" type=\"text/javascript\"></script>\n<script src=\"/js/templatemo.min.js\" type=\"text/javascript\"></script>\n<script src=\"/js/custom.js\" type=\"text/javascript\"></script>","bodyTagsOpen":"","htmlAttrs":"","bodyAttrs":""};
+
+export { _virtual__headStatic as default };
+//# sourceMappingURL=_virtual_head-static.mjs.map

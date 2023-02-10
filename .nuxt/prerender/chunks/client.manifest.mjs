@@ -1,4 +1,4 @@
-export default {
+const client_manifest = {
   "_composables.053ad91f.js": {
     "resourceType": "script",
     "module": true,
@@ -298,4 +298,7 @@ export default {
     "isDynamicEntry": true,
     "src": "virtual:nuxt:E:/Projects/Konten-Nuxt/runner-shop/.nuxt/error-component.mjs"
   }
-}
+};
+
+export { client_manifest as default };
+//# sourceMappingURL=client.manifest.mjs.map

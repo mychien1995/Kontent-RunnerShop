@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
-    "@types/async-lock": "^1.4.0",
-    "async-lock": "^1.4.0",
     "pinia": "^2.0.30"
   }
 }
