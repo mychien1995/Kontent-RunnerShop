@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-const { getSiteSettings } = useSiteSettingsStore();
-const siteSettings = await getSiteSettings();
+const siteSettings = await useSiteSettingsStore().getContent();
 const shopName = useGetTextFieldValue(siteSettings, "footer_shop_name");
 const email = useGetTextFieldValue(siteSettings, "email");
 const phone = useGetTextFieldValue(siteSettings, "phone");

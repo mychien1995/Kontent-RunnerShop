@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-const { getSiteSettings } = useSiteSettingsStore();
-const siteSettings = await getSiteSettings();
-console.log(siteSettings);
+const siteSettings = await useSiteSettingsStore().getContent();
 const imageUrl = useGetImageFieldUrl(siteSettings, "header_logo");
 const headerLinkLists = useGetLinkListValue(siteSettings, "header_links");
 </script>
@@ -13,7 +11,7 @@ const headerLinkLists = useGetLinkListValue(siteSettings, "header_links");
         class="navbar-brand text-success logo h1 align-self-center"
         to="/"
       >
-        <img :src="imageUrl" />
+        <img :src="imageUrl" style="max-width: 200px" />
       </nuxt-link>
 
       <button

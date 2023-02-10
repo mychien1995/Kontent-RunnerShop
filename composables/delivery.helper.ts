@@ -1,7 +1,12 @@
-import { Link, SocialLink } from "@/types";
+import {
+  Link,
+  SingleItemContent,
+  SingleItemResponse,
+  SocialLink,
+} from "@/types";
 
 export const useGetImageFieldUrl = (
-  singleItemResponse: any,
+  singleItemResponse: SingleItemResponse,
   fieldName: string
 ): string => {
   const field = <any>singleItemResponse.item.elements[fieldName];
@@ -9,16 +14,33 @@ export const useGetImageFieldUrl = (
   return field.value[0].url || "";
 };
 
+export const useGetContentImageFieldUrl = (
+  singleItemResponse: SingleItemContent,
+  fieldName: string
+): string => {
+  const field = <any>singleItemResponse.elements[fieldName];
+  if (!field?.value) return "";
+  return field.value[0].url || "";
+};
+
 export const useGetTextFieldValue = (
-  singleItemResponse: any,
+  singleItemResponse: SingleItemResponse,
   fieldName: string
 ): string => {
   const field = <any>singleItemResponse.item.elements[fieldName];
   return field?.value || "";
 };
 
+export const useGetContentTextFieldValue = (
+  singleItemResponse: SingleItemContent,
+  fieldName: string
+): string => {
+  const field = <any>singleItemResponse.elements[fieldName];
+  return field?.value || "";
+};
+
 export const useSocialLinkListValue = (
-  singleItemResponse: any,
+  singleItemResponse: SingleItemResponse,
   fieldName: string
 ): SocialLink[] =>
   getLinkListValue<SocialLink>(
@@ -33,7 +55,7 @@ export const useSocialLinkListValue = (
   );
 
 export const useGetLinkListValue = (
-  singleItemResponse: any,
+  singleItemResponse: SingleItemResponse,
   fieldName: string
 ): Link[] =>
   getLinkListValue<Link>(
@@ -46,8 +68,43 @@ export const useGetLinkListValue = (
       }
   );
 
+export const useGetContentAreaValue = (
+  singleItemResponse: SingleItemResponse,
+  fieldName: string
+): SingleItemContent[] => {
+  const contentAreaElements = <any[]>(
+    singleItemResponse.item.elements[fieldName]?.value
+  );
+  if (!contentAreaElements || contentAreaElements.length == 0) return [];
+  const elements: SingleItemContent[] = [];
+  contentAreaElements.forEach((el) => {
+    const contentElement = singleItemResponse.modular_content[el];
+    if (!contentElement) return;
+    elements.push(contentElement);
+  });
+  return elements;
+};
+
+export const useGetModularContentValue = (
+  singleItemResponse: SingleItemResponse,
+  singleItemContent: SingleItemContent,
+  fieldName: string
+): SingleItemContent[] => {
+  const contentAreaElements = <any[]>(
+    singleItemContent.elements[fieldName]?.value
+  );
+  if (!contentAreaElements || contentAreaElements.length == 0) return [];
+  const elements: SingleItemContent[] = [];
+  contentAreaElements.forEach((el) => {
+    const contentElement = singleItemResponse.modular_content[el];
+    if (!contentElement) return;
+    elements.push(contentElement);
+  });
+  return elements;
+};
+
 const getLinkListValue = <T>(
-  singleItemResponse: any,
+  singleItemResponse: SingleItemResponse,
   fieldName: string,
   valueGetter: (data: any) => T
 ): T[] => {

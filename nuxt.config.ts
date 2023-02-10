@@ -35,7 +35,33 @@ export default defineNuxtConfig({
         },
       ],
       style: [],
-      script: [],
+      script: [
+        {
+          src: "/js/jquery-1.11.0.min.js",
+          tagPosition : "bodyClose",
+          type : "text/javascript"
+        },
+        {
+          src: "/js/jquery-migrate-1.2.1.min.js",
+          tagPosition : "bodyClose",
+          type : "text/javascript"
+        },
+        {
+          src: "/js/bootstrap.bundle.min.js",
+          tagPosition : "bodyClose",
+          type : "text/javascript"
+        },
+        {
+          src: "/js/templatemo.min.js",
+          tagPosition : "bodyClose",
+          type : "text/javascript"
+        },
+        {
+          src: "/js/custom.js",
+          tagPosition : "bodyClose",
+          type : "text/javascript"
+        },
+      ],
       noscript: [],
     },
   },

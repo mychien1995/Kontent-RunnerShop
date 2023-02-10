@@ -77,16 +77,23 @@ declare global {
   const useAppConfig: typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useCamelize: typeof import('../../utils/string.util')['useCamelize']
+  const useContentStore: typeof import('../../stores/useContent.store')['default']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useError: typeof import('../../node_modules/nuxt/dist/app')['useError']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
   const useFetchContentByKey: typeof import('../../composables/delivery.api')['useFetchContentByKey']
+  const useGetContentAreaValue: typeof import('../../composables/delivery.helper')['useGetContentAreaValue']
+  const useGetContentImageFieldUrl: typeof import('../../composables/delivery.helper')['useGetContentImageFieldUrl']
+  const useGetContentTextFieldValue: typeof import('../../composables/delivery.helper')['useGetContentTextFieldValue']
   const useGetImageFieldUrl: typeof import('../../composables/delivery.helper')['useGetImageFieldUrl']
   const useGetLinkListValue: typeof import('../../composables/delivery.helper')['useGetLinkListValue']
+  const useGetModularContentValue: typeof import('../../composables/delivery.helper')['useGetModularContentValue']
   const useGetTextFieldValue: typeof import('../../composables/delivery.helper')['useGetTextFieldValue']
   const useHead: typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']
+  const useHomePageStore: typeof import('../../stores/useHomePage.store')['useHomePageStore']
   const useIsServer: typeof import('../../composables/ssr.api')['useIsServer']
   const useLazyAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useLazyAsyncData']
   const useLazyFetch: typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']
@@ -101,11 +108,11 @@ declare global {
   const useRuntimeConfig: typeof import('../../node_modules/nuxt/dist/app')['useRuntimeConfig']
   const useSeoMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useSeoMeta']
   const useServerSeoMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useServerSeoMeta']
-  const useSiteSettingStore: typeof import('../../stores/useSiteSetting.store')['default']
-  const useSiteSettingsStore: typeof import('../../stores/index')['useSiteSettingsStore']
+  const useSiteSettingsStore: typeof import('../../stores/useHomePage.store')['useSiteSettingsStore']
   const useSlots: typeof import('vue')['useSlots']
   const useSocialLinkListValue: typeof import('../../composables/delivery.helper')['useSocialLinkListValue']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
+  const useTitlelize: typeof import('../../utils/string.util')['useTitlelize']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -196,16 +203,23 @@ declare module 'vue' {
     readonly useAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useCamelize: UnwrapRef<typeof import('../../utils/string.util')['useCamelize']>
+    readonly useContentStore: UnwrapRef<typeof import('../../stores/useContent.store')['default']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useError']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
     readonly useFetchContentByKey: UnwrapRef<typeof import('../../composables/delivery.api')['useFetchContentByKey']>
+    readonly useGetContentAreaValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentAreaValue']>
+    readonly useGetContentImageFieldUrl: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentImageFieldUrl']>
+    readonly useGetContentTextFieldValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentTextFieldValue']>
     readonly useGetImageFieldUrl: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetImageFieldUrl']>
     readonly useGetLinkListValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetLinkListValue']>
+    readonly useGetModularContentValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetModularContentValue']>
     readonly useGetTextFieldValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetTextFieldValue']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']>
+    readonly useHomePageStore: UnwrapRef<typeof import('../../stores/useHomePage.store')['useHomePageStore']>
     readonly useIsServer: UnwrapRef<typeof import('../../composables/ssr.api')['useIsServer']>
     readonly useLazyAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useLazyAsyncData']>
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']>
@@ -220,11 +234,11 @@ declare module 'vue' {
     readonly useRuntimeConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRuntimeConfig']>
     readonly useSeoMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useSeoMeta']>
     readonly useServerSeoMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useServerSeoMeta']>
-    readonly useSiteSettingStore: UnwrapRef<typeof import('../../stores/useSiteSetting.store')['default']>
-    readonly useSiteSettingsStore: UnwrapRef<typeof import('../../stores/index')['useSiteSettingsStore']>
+    readonly useSiteSettingsStore: UnwrapRef<typeof import('../../stores/useHomePage.store')['useSiteSettingsStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSocialLinkListValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useSocialLinkListValue']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
+    readonly useTitlelize: UnwrapRef<typeof import('../../utils/string.util')['useTitlelize']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
