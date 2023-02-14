@@ -8,6 +8,6 @@ export { useGetImageFieldUrl, useGetContentImageFieldUrl, useGetTextFieldValue, 
 export { useIsServer } from '../composables/ssr.api';
 export { useCamelize, useTitlelize } from '../utils/string.util';
 export { default as useContentStore } from '../stores/useContent.store';
-export { useHomePageStore, useSiteSettingsStore } from '../stores/useHomePage.store';
+export { useHomePageStore, useSiteSettingsStore, useAboutUsPageStore, useContactUsPageStore } from '../stores/useHomePage.store';
 export { usePinia } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

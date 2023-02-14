@@ -7,11 +7,15 @@ import {
 import Carousel from "./carousel.vue";
 import CategoryBlock from "./categoryBlock.vue";
 import FeaturedProduct from "./featuredProduct.vue";
+import OurBrands from "./ourBrands.vue";
+import OurServices from "./ourServices.vue";
 
 const componentMap = <any>{
   carousel: Carousel,
   category_block: CategoryBlock,
-  featured_product_block : FeaturedProduct
+  featured_product_block: FeaturedProduct,
+  our_services_block: OurServices,
+  our_brand_block: OurBrands,
 };
 
 const props = defineProps<{

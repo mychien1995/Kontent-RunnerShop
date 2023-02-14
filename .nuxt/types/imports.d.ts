@@ -74,10 +74,12 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const updateAppConfig: typeof import('../../node_modules/nuxt/dist/app')['updateAppConfig']
+  const useAboutUsPageStore: typeof import('../../stores/useHomePage.store')['useAboutUsPageStore']
   const useAppConfig: typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
   const useCamelize: typeof import('../../utils/string.util')['useCamelize']
+  const useContactUsPageStore: typeof import('../../stores/useHomePage.store')['useContactUsPageStore']
   const useContentStore: typeof import('../../stores/useContent.store')['default']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
   const useCssModule: typeof import('vue')['useCssModule']
@@ -200,10 +202,12 @@ declare module 'vue' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly updateAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['updateAppConfig']>
+    readonly useAboutUsPageStore: UnwrapRef<typeof import('../../stores/useHomePage.store')['useAboutUsPageStore']>
     readonly useAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCamelize: UnwrapRef<typeof import('../../utils/string.util')['useCamelize']>
+    readonly useContactUsPageStore: UnwrapRef<typeof import('../../stores/useHomePage.store')['useContactUsPageStore']>
     readonly useContentStore: UnwrapRef<typeof import('../../stores/useContent.store')['default']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>

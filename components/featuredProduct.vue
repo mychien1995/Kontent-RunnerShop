@@ -65,7 +65,7 @@ const products = productsContent.map(
                 <li class="text-muted text-right">${{ item.price }}</li>
               </ul>
               <a
-                href="shop-single.html"
+                href="/"
                 class="h2 text-decoration-none text-dark"
                 >{{ item.name }}</a
               >

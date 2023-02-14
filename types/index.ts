@@ -59,3 +59,19 @@ export interface FeaturedProductItem {
   name: string;
   description: string;
 }
+
+export interface OurServiceItem{
+  title : string;
+  icon : string;
+}
+
+export interface OurBrandItem{
+  link : string;
+  imageSrc : string;
+}
+
+declare global {
+  interface Window {
+      L:any;
+  }
+}
