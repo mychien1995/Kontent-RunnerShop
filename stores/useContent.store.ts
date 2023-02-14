@@ -6,8 +6,6 @@ const createContentStore = (contentId: string) => {
     let fetched = false;
 
     function getContent(): Promise<SingleItemResponse> {
-      if (!process.server)
-        return Promise.resolve(<SingleItemResponse>{ item: { elements: {} } });
       if (fetched) return getContentPromoise.value;
       getContentPromoise.value = useFetchContentByKey(contentId, [
         { key: "depth", value: 20 },
