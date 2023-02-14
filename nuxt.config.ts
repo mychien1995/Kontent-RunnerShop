@@ -72,7 +72,7 @@ export default defineNuxtConfig({
     "/assets/css/fontawesome.min.css",
   ],
   nitro: {
-    dev: true,
+    dev: false,
     devServer: {
       watch: [
         "*.ts",
