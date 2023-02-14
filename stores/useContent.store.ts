@@ -2,12 +2,12 @@ import { SingleItemResponse } from "@/types";
 import { defineStore } from "pinia";
 const createContentStore = (contentId: string) => {
   return defineStore(contentId, () => {
-    if (process.server)
-      return Promise.resolve(<SingleItemResponse>{ item: { elements: {} } });
     const getContentPromoise = ref(Promise.resolve(<SingleItemResponse>{}));
     let fetched = false;
 
     function getContent(): Promise<SingleItemResponse> {
+      if (!process.server)
+        return Promise.resolve(<SingleItemResponse>{ item: { elements: {} } });
       if (fetched) return getContentPromoise.value;
       getContentPromoise.value = useFetchContentByKey(contentId, [
         { key: "depth", value: 20 },
