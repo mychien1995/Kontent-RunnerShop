@@ -2,6 +2,8 @@ import { SingleItemResponse } from "@/types";
 import { defineStore } from "pinia";
 const createContentStore = (contentId: string) => {
   return defineStore(contentId, () => {
+    if (process.server)
+      return Promise.resolve(<SingleItemResponse>{ item: { elements: {} } });
     const getContentPromoise = ref(Promise.resolve(<SingleItemResponse>{}));
     let fetched = false;
 

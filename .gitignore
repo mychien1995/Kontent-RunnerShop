@@ -11,6 +11,9 @@ node_modules
 *.local
 android
 ios
+.output/
+.nuxt/dist
+.nuxt/prerender
 
 # Editor directories and files
 .vscode/*
