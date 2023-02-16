@@ -87,6 +87,7 @@ declare global {
   const useError: typeof import('../../node_modules/nuxt/dist/app')['useError']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
   const useFetchContentByKey: typeof import('../../composables/delivery.api')['useFetchContentByKey']
+  const useFetchContentItems: typeof import('../../composables/delivery.api')['useFetchContentItems']
   const useGetContentAreaValue: typeof import('../../composables/delivery.helper')['useGetContentAreaValue']
   const useGetContentImageFieldUrl: typeof import('../../composables/delivery.helper')['useGetContentImageFieldUrl']
   const useGetContentTextFieldValue: typeof import('../../composables/delivery.helper')['useGetContentTextFieldValue']
@@ -215,6 +216,7 @@ declare module 'vue' {
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useError']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
     readonly useFetchContentByKey: UnwrapRef<typeof import('../../composables/delivery.api')['useFetchContentByKey']>
+    readonly useFetchContentItems: UnwrapRef<typeof import('../../composables/delivery.api')['useFetchContentItems']>
     readonly useGetContentAreaValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentAreaValue']>
     readonly useGetContentImageFieldUrl: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentImageFieldUrl']>
     readonly useGetContentTextFieldValue: UnwrapRef<typeof import('../../composables/delivery.helper')['useGetContentTextFieldValue']>

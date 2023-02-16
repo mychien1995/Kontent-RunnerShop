@@ -11,3 +11,10 @@ Custom Css
     height: 300px;
   }
 }
+
+div.img-fluid{
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  background-position: center;
+}

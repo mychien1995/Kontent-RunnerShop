@@ -13,6 +13,9 @@ export interface SingleItemResponse {
   item: SingleItemContent;
   modular_content: any;
 }
+export interface MultipleItemsResponse {
+  items: SingleItemContent[];
+}
 
 export interface SingleItemContent {
   system: ItemSystemInfo;
@@ -60,18 +63,30 @@ export interface FeaturedProductItem {
   description: string;
 }
 
-export interface OurServiceItem{
-  title : string;
-  icon : string;
+export interface OurServiceItem {
+  title: string;
+  icon: string;
 }
 
-export interface OurBrandItem{
-  link : string;
+export interface OurBrandItem {
+  link: string;
+  imageSrc: string;
+}
+
+export interface QueryParam {
+  key: string;
+  value: string;
+}
+
+export interface ProductListingItem{
   imageSrc : string;
+  name : string;
+  price : string;
+  sizes : string;
 }
 
 declare global {
   interface Window {
-      L:any;
+    L: any;
   }
 }
